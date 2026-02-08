@@ -1,0 +1,9 @@
+yfinance
+pandas
+requests 
+yt_dlp
+whisper
+bsescraper
+PyPDF2 
+beautifulsoup4
+lxml
