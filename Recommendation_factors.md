@@ -72,3 +72,13 @@ When your Final Agent generates the report, it should follow this structure:
 1.  **Step-by-Step State:** Your LangGraph should have a "Research" state that collects all these variables before the "Decision" node is triggered.
 2.  **External Knowledge:** Feed your agent a "Market Sentiment" score (Fear & Greed Index for India) as a global variable.
 3.  **Proof of Analysis:** Always make the agent cite the specific line from the transcript or the specific P/E number so the user trusts the "Proof."
+
+#### Data Sources
+Data Sources
+## Stocks
+1.	NSE Direct (https://www.nseindia.com/get-quotes/equity?symbol=<name>)
+2.	yfinance
+3.	TrueData/Global Datafeeds
+## Mutual Fund
+1.	AMFI (https://www.amfiindia.com/spages/NAVAll.txt)
+2.	MFAPI.in (https://api.mfapi.in/mf/{scheme_code})
