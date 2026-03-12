@@ -1,0 +1,14 @@
+{
+  "audio_files": {
+    "Agentic": {
+      "duration_seconds": 438.0444375,
+      "sample_rate": 16000,
+      "rms_energy": 0.05523226037621498,
+      "zero_crossing_rate": 0.11426537445668054,
+      "spectral_centroid": 1496.9624641070966,
+      "spectral_bandwidth": 1490.4301529027887,
+      "spectral_rolloff": 2964.088410402513,
+      "file_size_mb": 13.36812973022461
+    }
+  }
+}

@@ -1,0 +1,10 @@
+[
+  {
+    "video": "agentic",
+    "transcript": "C:\\Users\\vinoth.dharmaraj\\OneDrive - Fractal Analytics Limited\\Desktop\\video_processing\\output_transcripts\\english\\Agentic.txt",
+    "metric": "WER",
+    "wer": 0.0,
+    "wer_percentage": 0.0,
+    "status": "success"
+  }
+]

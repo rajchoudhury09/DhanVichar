@@ -1,0 +1,14 @@
+README.md
+pyproject.toml
+video_transcription_pipeline/__init__.py
+video_transcription_pipeline/exceptions.py
+video_transcription_pipeline/extractors.py
+video_transcription_pipeline/file_manager.py
+video_transcription_pipeline/pipeline.py
+video_transcription_pipeline/transcriber.py
+video_transcription_pipeline/validator.py
+video_transcription_pipeline.egg-info/PKG-INFO
+video_transcription_pipeline.egg-info/SOURCES.txt
+video_transcription_pipeline.egg-info/dependency_links.txt
+video_transcription_pipeline.egg-info/requires.txt
+video_transcription_pipeline.egg-info/top_level.txt

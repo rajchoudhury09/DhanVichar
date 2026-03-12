@@ -1,0 +1,2 @@
+Video: wt_audio.mp4
+Status: No audio content detected (RMS value = 0)

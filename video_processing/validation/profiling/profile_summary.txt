@@ -1,0 +1,29 @@
+VIDEO TRANSCRIPTION PIPELINE PROFILING SUMMARY
+============================================================
+Timestamp: 2026-02-23T15:33:15.632262
+System: 14 CPUs, 31.5GB RAM
+
+MEMORY USAGE:
+  Start: 3143.2 MB
+  End: 5321.7 MB
+  Increase: 2178.5 MB
+  CPU usage: 0.0%
+  Execution time: 479.20s
+
+PIPELINE BENCHMARK (FFMPEG):
+  Total time: 504.54s
+  Memory: 487.3MB
+  Videos: 2 total, 1 successful, 0 failed
+  Total audio size: 13.37MB
+
+  Audio files:
+    Agentic.wav: 13.37MB
+
+TOP TIME CONSUMERS:
+  C:\Program Files\Python311\Lib\contextlib.py:141(__exit__): 0.000s
+  C:\Program Files\Python311\Lib\functools.py:393(__get__): 0.000s
+  C:\Program Files\Python311\Lib\enum.py:193(__get__): 0.000s
+  C:\Program Files\Python311\Lib\pathlib.py:1070(write_text): 0.002s
+  C:\Program Files\Python311\Lib\pathlib.py:1111(mkdir): 0.004s
+
+Detailed results: C:\Users\vinoth.dharmaraj\OneDrive - Fractal Analytics Limited\Desktop\video_processing\validation\profiling\profile_results.json

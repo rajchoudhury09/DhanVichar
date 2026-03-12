@@ -1,0 +1,24 @@
+# Video Transcription Pipeline Configuration
+
+paths:
+  input_folder: ../input_videos
+  output_folder: ../output_transcripts
+
+whisper:
+  # Model type: 'local' or 'openai'
+  model_type: local
+  
+  # For local Whisper: tiny, base, small, medium, large, large-v2, large-v3
+  local_model: medium
+  
+  # For OpenAI Whisper API (requires API key)
+  openai_api_key: null
+  openai_model: whisper-1
+
+audio:
+  # Extraction method: ffmpeg, moviepy, gstreamer
+  extraction_method: ffmpeg
+
+logging:
+  # Log level: DEBUG, INFO, WARNING, ERROR, CRITICAL
+  log_level: INFO

@@ -1,0 +1,270 @@
+Metadata-Version: 2.4
+Name: video-transcription-pipeline
+Version: 1.0.0
+Summary: Production-ready Python package for video transcription with Whisper
+Author: Video Transcription Team
+License: MIT
+Project-URL: Homepage, https://github.com/your-org/video-transcription-pipeline
+Project-URL: Repository, https://github.com/your-org/video-transcription-pipeline
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: openai-whisper>=20231117
+Requires-Dist: torch>=1.9.0
+Requires-Dist: torchaudio>=0.9.0
+Requires-Dist: numpy>=1.21.0
+Requires-Dist: scipy>=1.7.0
+Requires-Dist: librosa>=0.8.1
+Requires-Dist: soundfile>=0.10.3
+Requires-Dist: ffmpeg-python>=0.2.0
+Requires-Dist: moviepy>=1.0.3
+Provides-Extra: dev
+Requires-Dist: pytest>=7.0; extra == "dev"
+Requires-Dist: black; extra == "dev"
+Requires-Dist: flake8; extra == "dev"
+
+# Video Transcription Pipeline
+
+A production-ready Python package for video transcription with configurable audio extraction methods and Whisper models.
+
+## Features
+
+- **Multiple Audio Extraction Methods**: FFmpeg, MoviePy, GStreamer with intelligent fallback
+- **Configurable Whisper Models**: Support for all Whisper model sizes (tiny to large-v3)
+- **Content Type Organization**: Automatic organization by language (English, non-English, translated)
+- **Production-Ready**: Comprehensive error handling, logging, and validation
+- **Retry Logic**: Automatic fallback to alternative extraction methods on failure
+- **CLI Interface**: Command-line interface for easy integration
+
+## Installation
+
+```bash
+# Install from source
+cd video_transcription_pipeline
+pip install -e .
+
+# Or install dependencies manually
+pip install openai-whisper moviepy
+```
+
+### System Dependencies
+
+- **FFmpeg**: Required for audio extraction
+- **GStreamer**: Optional, used as fallback method
+- **MoviePy**: Installed via pip
+
+## Quick Start
+
+### Python API
+
+```python
+from video_transcription_pipeline import VideoTranscriptionPipeline
+
+# Initialize pipeline
+pipeline = VideoTranscriptionPipeline(log_level='INFO')
+
+# Process videos
+results = pipeline.process_videos(
+    input_folder_path='./input_videos',
+    output_folder_path='./output_transcripts', 
+    whisper_model='large',
+    audio_extraction_method='moviepy'
+)
+
+print(f"Processed {results['successful']}/{results['total_videos']} videos")
+```
+
+### Command Line Interface
+
+```bash
+# Basic usage
+python -m video_transcription_pipeline.cli input_videos/ output_transcripts/
+
+# With custom settings
+python -m video_transcription_pipeline.cli input_videos/ output_transcripts/ \
+    --whisper-model large \
+    --extraction-method moviepy \
+    --log-level DEBUG \
+    --output-results results.json
+```
+
+## Configuration Options
+
+### Whisper Models
+- `tiny`: Fastest, lowest accuracy
+- `base`: Good balance of speed and accuracy  
+- `small`: Better accuracy, moderate speed
+- `medium`: High accuracy, slower processing
+- `large`: Highest accuracy, slowest processing
+- `large-v2`, `large-v3`: Latest large model versions
+
+### Audio Extraction Methods
+- `ffmpeg`: Fast and reliable (recommended)
+- `moviepy`: High quality, slower processing
+- `gstreamer`: Fallback option, requires separate installation
+
+## Output Structure
+
+```
+output_folder/
+├── english/           # English language transcripts
+│   ├── video1.txt
+│   └── video2.txt
+├── non_english/       # Original non-English transcripts  
+│   ├── video3_es.txt
+│   └── video4_fr.txt
+└── translated/        # English translations
+    ├── video3_en.txt
+    └── video4_en.txt
+```
+
+## Error Handling & Retry Logic
+
+The pipeline implements intelligent retry logic:
+
+1. **Dependency Errors**: Immediate failure if required dependencies are missing
+2. **Extraction Failures**: Automatic fallback to alternative extraction methods
+3. **Method Priority**: User's preferred method → FFmpeg → MoviePy → GStreamer (last resort)
+4. **Comprehensive Logging**: Detailed logs for debugging and monitoring
+
+## API Reference
+
+### VideoTranscriptionPipeline
+
+#### `__init__(log_level='INFO')`
+Initialize the pipeline with specified logging level.
+
+#### `process_videos(input_folder_path, output_folder_path, whisper_model, audio_extraction_method)`
+Process all videos in the input folder.
+
+**Parameters:**
+- `input_folder_path` (str): Path to folder containing video files
+- `output_folder_path` (str): Path to output folder for transcripts
+- `whisper_model` (str): Whisper model name
+- `audio_extraction_method` (str): Preferred extraction method
+
+**Returns:**
+- `dict`: Processing results with statistics and details
+
+### Return Value Structure
+
+```python
+{
+    'total_videos': 5,
+    'successful': 4, 
+    'failed': 1,
+    'processing_details': {
+        'video1': {
+            'status': 'success',
+            'extraction_method': 'ffmpeg',
+            'content_type': 'english',
+            'language': 'en'
+        },
+        'video2': {
+            'status': 'failed',
+            'error': 'Audio extraction failed'
+        }
+    },
+    'content_types': {
+        'english': 3,
+        'non_english_es': 1
+    },
+    'extraction_methods_used': {
+        'ffmpeg': 3,
+        'moviepy': 1
+    }
+}
+```
+
+## Supported File Formats
+
+- MP4 (.mp4)
+- MKV (.mkv) 
+- AVI (.avi)
+- MOV (.mov)
+- WMV (.wmv)
+- FLV (.flv)
+- WebM (.webm)
+
+## Performance Recommendations
+
+Based on comprehensive analysis:
+
+### For High Accuracy
+- **Model**: `large` or `large-v3`
+- **Method**: `moviepy`
+- **Use Case**: Critical applications, high-quality content
+
+### For Balanced Performance  
+- **Model**: `medium` or `large`
+- **Method**: `ffmpeg`
+- **Use Case**: Production deployment, good balance of speed/accuracy
+
+### For Speed
+- **Model**: `base` or `small`
+- **Method**: `ffmpeg`
+- **Use Case**: Real-time processing, large volumes
+
+## Error Types
+
+- `DependencyError`: Missing required dependencies
+- `ValidationError`: Invalid input parameters
+- `ExtractionError`: Audio extraction failed with all methods
+- `TranscriptionError`: Whisper transcription failed
+
+## Logging
+
+The package provides comprehensive logging:
+
+```python
+# Set logging level
+pipeline = VideoTranscriptionPipeline(log_level='DEBUG')
+
+# Logs include:
+# - Dependency validation
+# - Video discovery
+# - Extraction attempts and fallbacks
+# - Transcription progress
+# - File saving operations
+# - Error details
+```
+
+## Development
+
+```bash
+# Install in development mode
+pip install -e .[dev]
+
+# Run tests
+pytest tests/
+
+# Format code
+black video_transcription_pipeline/
+```
+
+## License
+
+MIT License - see LICENSE file for details.
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Add tests for new functionality
+4. Ensure all tests pass
+5. Submit a pull request
+
+## Support
+
+For issues and questions:
+- Check the logs for detailed error information
+- Verify all dependencies are installed correctly
+- Ensure input videos are in supported formats
+- Review the comprehensive analysis reports for method selection guidance

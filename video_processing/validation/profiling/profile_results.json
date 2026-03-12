@@ -1,0 +1,108 @@
+{
+  "timestamp": "2026-02-23T15:33:15.632262",
+  "system_info": {
+    "cpu_count": 14,
+    "memory_total_gb": 31.46509552001953,
+    "python_version": "3.11"
+  },
+  "time_profile": {
+    "report": "         7430331 function calls (6436294 primitive calls) in 470.127 seconds\n\n   Ordered by: cumulative time\n   List reduced from 1965 to 20 due to restriction <20>\n\n   ncalls  tottime  percall  cumtime  percall filename:lineno(function)\n        1    0.001    0.001  469.376  469.376 C:\\Users\\vinoth.dharmaraj\\OneDrive - Fractal Analytics Limited\\Desktop\\video_processing\\video_transcription_pipeline\\video_transcription_pipeline\\pipeline.py:48(process_videos)\n        1    0.000    0.000  459.725  459.725 C:\\Users\\vinoth.dharmaraj\\OneDrive - Fractal Analytics Limited\\Desktop\\video_processing\\video_transcription_pipeline\\video_transcription_pipeline\\transcriber.py:52(transcribe)\n        1    0.000    0.000  459.725  459.725 C:\\Users\\vinoth.dharmaraj\\OneDrive - Fractal Analytics Limited\\Desktop\\video_processing\\video_transcription_pipeline\\video_transcription_pipeline\\transcriber.py:61(_transcribe_local)\n        1    0.018    0.018  459.725  459.725 C:\\Users\\vinoth.dharmaraj\\OneDrive - Fractal Analytics Limited\\Desktop\\video_processing\\myenv\\Lib\\site-packages\\whisper\\transcribe.py:38(transcribe)\n    35/18    0.004    0.000  458.836   25.491 C:\\Users\\vinoth.dharmaraj\\OneDrive - Fractal Analytics Limited\\Desktop\\video_processing\\myenv\\Lib\\site-packages\\torch\\utils\\_contextlib.py:120(decorate_context)\n486387/1259    2.343    0.000  453.759    0.360 C:\\Users\\vinoth.dharmaraj\\OneDrive - Fractal Analytics Limited\\Desktop\\video_processing\\myenv\\Lib\\site-packages\\torch\\nn\\modules\\module.py:1772(_wrapped_call_impl)\n486387/1259    5.807    0.000  453.746    0.360 C:\\Users\\vinoth.dharmaraj\\OneDrive - Fractal Analytics Limited\\Desktop\\video_processing\\myenv\\Lib\\site-packages\\torch\\nn\\modules\\module.py:1780(_call_impl)\n       17    0.001    0.000  445.151   26.185 C:\\Users\\vinoth.dharmaraj\\OneDrive - Fractal Analytics Limited\\Desktop\\video_processing\\myenv\\Lib\\site-packages\\whisper\\transcribe.py:184(decode_with_fallback)\n       17    0.000    0.000  445.149   26.185 C:\\Users\\vinoth.dharmaraj\\OneDrive - Fractal Analytics Limited\\Desktop\\video_processing\\myenv\\Lib\\site-packages\\whisper\\decoding.py:792(decode)\n       17    0.004    0.000  444.430   26.143 C:\\Users\\vinoth.dharmaraj\\OneDrive - Fractal Analytics Limited\\Desktop\\video_processing\\myenv\\Lib\\site-packages\\whisper\\decoding.py:712(run)\n    30216   12.340    0.000  438.722    0.015 C:\\Users\\vinoth.dharmaraj\\OneDrive - Fractal Analytics Limited\\Desktop\\video_processing\\myenv\\Lib\\site-packages\\whisper\\model.py:160(forward)\n       17    0.233    0.014  273.289   16.076 C:\\Users\\vinoth.dharmaraj\\OneDrive - Fractal Analytics Limited\\Desktop\\video_processing\\myenv\\Lib\\site-packages\\whisper\\decoding.py:680(_main_loop)\n   241728    3.199    0.000  272.789    0.001 C:\\Users\\vinoth.dharmaraj\\OneDrive - Fractal Analytics Limited\\Desktop\\video_processing\\myenv\\Lib\\site-packages\\whisper\\model.py:45(forward)\n     1241   11.807    0.010  270.884    0.218 C:\\Users\\vinoth.dharmaraj\\OneDrive - Fractal Analytics Limited\\Desktop\\video_processing\\myenv\\Lib\\site-packages\\whisper\\model.py:227(forward)\n     1240    0.050    0.000  269.509    0.217 C:\\Users\\vinoth.dharmaraj\\OneDrive - Fractal Analytics Limited\\Desktop\\video_processing\\myenv\\Lib\\site-packages\\whisper\\decoding.py:155(logits)\n   241728  265.710    0.001  265.710    0.001 {built-in method torch._C._nn.linear}\n    60000    2.640    0.000  260.159    0.004 C:\\Users\\vinoth.dharmaraj\\OneDrive - Fractal Analytics Limited\\Desktop\\video_processing\\myenv\\Lib\\site-packages\\whisper\\model.py:92(forward)\n       18    0.187    0.010  182.768   10.154 C:\\Users\\vinoth.dharmaraj\\OneDrive - Fractal Analytics Limited\\Desktop\\video_processing\\myenv\\Lib\\site-packages\\whisper\\model.py:188(forward)\n       17    0.001    0.000  171.113   10.065 C:\\Users\\vinoth.dharmaraj\\OneDrive - Fractal Analytics Limited\\Desktop\\video_processing\\myenv\\Lib\\site-packages\\whisper\\decoding.py:644(_get_audio_features)\n    30216    1.589    0.000  150.492    0.005 C:\\Users\\vinoth.dharmaraj\\OneDrive - Fractal Analytics Limited\\Desktop\\video_processing\\myenv\\Lib\\site-packages\\torch\\nn\\modules\\container.py:248(forward)\n\n\n",
+    "top_functions": [
+      {
+        "function": "C:\\Program Files\\Python311\\Lib\\contextlib.py:141(__exit__)",
+        "calls": 7,
+        "total_time": 2.86e-05,
+        "cumulative_time": 4.2300000000000005e-05
+      },
+      {
+        "function": "C:\\Program Files\\Python311\\Lib\\functools.py:393(__get__)",
+        "calls": 1,
+        "total_time": 2.08e-05,
+        "cumulative_time": 2.3800000000000003e-05
+      },
+      {
+        "function": "C:\\Program Files\\Python311\\Lib\\enum.py:193(__get__)",
+        "calls": 682,
+        "total_time": 0.0002156,
+        "cumulative_time": 0.00029160000000000004
+      },
+      {
+        "function": "C:\\Program Files\\Python311\\Lib\\pathlib.py:1070(write_text)",
+        "calls": 1,
+        "total_time": 3.32e-05,
+        "cumulative_time": 0.0019381000000000001
+      },
+      {
+        "function": "C:\\Program Files\\Python311\\Lib\\pathlib.py:1111(mkdir)",
+        "calls": 4,
+        "total_time": 4.8400000000000004e-05,
+        "cumulative_time": 0.0035506
+      },
+      {
+        "function": "C:\\Program Files\\Python311\\Lib\\contextlib.py:260(contextmanager)",
+        "calls": 2,
+        "total_time": 1.77e-05,
+        "cumulative_time": 6.29e-05
+      },
+      {
+        "function": "C:\\Program Files\\Python311\\Lib\\contextlib.py:527(_push_exit_callback)",
+        "calls": 17,
+        "total_time": 4.3e-05,
+        "cumulative_time": 4.94e-05
+      },
+      {
+        "function": "C:\\Program Files\\Python311\\Lib\\re\\__init__.py:163(match)",
+        "calls": 87,
+        "total_time": 0.0006554,
+        "cumulative_time": 0.0009982
+      },
+      {
+        "function": "C:\\Program Files\\Python311\\Lib\\contextlib.py:431(__enter__)",
+        "calls": 12,
+        "total_time": 1.8000000000000001e-06,
+        "cumulative_time": 1.8000000000000001e-06
+      },
+      {
+        "function": "C:\\Program Files\\Python311\\Lib\\contextlib.py:543(__enter__)",
+        "calls": 6,
+        "total_time": 2.9e-06,
+        "cumulative_time": 2.9e-06
+      }
+    ]
+  },
+  "memory_profile": {
+    "start_memory_mb": 3143.19140625,
+    "end_memory_mb": 5321.6875,
+    "memory_increase_mb": 2178.49609375,
+    "execution_time_seconds": 479.1993525028229,
+    "avg_cpu_percent": 0.0
+  },
+  "benchmark": {
+    "method": "ffmpeg",
+    "total_time_seconds": 504.543710231781,
+    "memory_mb": 487.2734375,
+    "videos_processed": 2,
+    "successful": 1,
+    "failed": 0,
+    "total_audio_size_mb": 13.36812973022461,
+    "audio_files": [
+      {
+        "name": "Agentic.wav",
+        "size_mb": 13.36812973022461
+      }
+    ],
+    "details": {
+      "Agentic": {
+        "status": "success",
+        "extraction_method": "ffmpeg",
+        "content_type": "english",
+        "language": "en"
+      },
+      "wt_audio": {
+        "status": "no_audio",
+        "extraction_method": "ffmpeg",
+        "message": "Video has no audio content (RMS = 0)"
+      }
+    }
+  }
+}

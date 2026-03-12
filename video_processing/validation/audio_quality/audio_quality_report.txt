@@ -1,0 +1,23 @@
+AUDIO QUALITY COMPARISON REPORT
+============================================================
+
+File: Agentic
+------------------------------------------------------------
+  audio_files : 438.0s, 13.37MB, RMS: 0.0552, SR: 16000Hz
+
+============================================================
+QUALITY METRICS SUMMARY
+============================================================
+
+AUDIO_FILES:
+  Average RMS Energy: 0.0552
+  Average Duration: 438.0s
+  Files Analyzed: 1/1
+
+============================================================
+RECOMMENDATIONS
+============================================================
+- Higher RMS energy indicates louder/clearer audio
+- All sample rates should be 16000 Hz for Whisper
+- Duration should be consistent across methods
+- Spectral centroid indicates brightness of sound
